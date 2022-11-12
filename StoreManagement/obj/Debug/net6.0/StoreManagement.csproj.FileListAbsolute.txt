@@ -64,3 +64,4 @@ P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\obj\Deb
 P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\obj\Debug\net6.0\StoreManagement.pdb
 P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\obj\Debug\net6.0\StoreManagement.genruntimeconfig.cache
 P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\obj\Debug\net6.0\ref\StoreManagement.dll
+P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\bin\Debug\net6.0\libman.json

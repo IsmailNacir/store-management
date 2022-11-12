@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement
 build_property._RazorSourceGeneratorDebug = 
 
+[P:/Pluralsight/ASP.NET Core Fundamentals/StoreManagement/StoreManagement/Pages/Admin/Categories/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2F0ZWdvcmllc1xBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[P:/Pluralsight/ASP.NET Core Fundamentals/StoreManagement/StoreManagement/Pages/Admin/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [P:/Pluralsight/ASP.NET Core Fundamentals/StoreManagement/StoreManagement/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
