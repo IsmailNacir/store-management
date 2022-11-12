@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using StoreManagement.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ProductDbContext>(option =>
+        option.UseSqlServer(builder.Configuration.GetConnectionString("StoreManagementDB")));
 
 var app = builder.Build();
 
