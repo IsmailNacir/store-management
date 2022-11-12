@@ -10,7 +10,9 @@
     <form method="post">
         <div class="card-body">
             <div class="mb-3">
-                <input type="text" class="form-control" />
+                <label>@Html.LabelFor(c=>c.Categ.Libelle)</label>
+                <input type="text" class="form-control" asp-for="@Model.Categ.Libelle" />
+                <span asp-validation-for="Categ.Libelle" class="text-danger"></span>
             </div>
         </div>
         <div class="card-footer text-muted">
@@ -18,3 +20,7 @@
         </div>
     </form>
 </div>
+
+@section  Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}

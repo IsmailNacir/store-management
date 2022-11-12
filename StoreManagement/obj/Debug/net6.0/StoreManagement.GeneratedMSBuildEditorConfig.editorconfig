@@ -11,7 +11,7 @@ build_property.RootNamespace = StoreManagement
 build_property.ProjectDir = P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement
 build_property._RazorSourceGeneratorDebug = 
 
