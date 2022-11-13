@@ -10,6 +10,8 @@ namespace StoreManagement.Data.Models
     public class Category
     {
         public Guid? CategoryId { get; set; }
+
+        [Display(Name = "Category Name")]
         [StringLength(maximumLength:30, MinimumLength =3, ErrorMessage ="Category Name must be between 3 and 30 char")]
         public string Libelle { get; set; } = string.Empty;
 

@@ -45,6 +45,7 @@ namespace StoreManagement.Pages.Admin.Categories
                     else
                     {
                         _toastNotification.AddErrorToastMessage("The new Category is not saved ! Please try again");
+                        //return RedirectToPage("./Index");
                     }
 
                 }
