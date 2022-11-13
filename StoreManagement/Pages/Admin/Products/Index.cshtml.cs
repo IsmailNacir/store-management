@@ -8,15 +8,15 @@ namespace StoreManagement.Pages.Admin.Products
 {
     public class IndexModel : PageModel
     {
-        private readonly ProductDbContext _context;
+        private readonly ProductDbContext _dbContext;
         public IEnumerable<Product> ProductList { get; set; }
         public IndexModel(ProductDbContext context)
         {
-            _context = context;
+            _dbContext = context;
         }
         public async Task OnGet()
         {
-            ProductList = await _context.Product.ToListAsync();
+            ProductList = await _dbContext.Product.ToListAsync();
         }
     }
 }

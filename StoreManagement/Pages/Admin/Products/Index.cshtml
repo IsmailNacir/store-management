@@ -16,14 +16,15 @@
     <div class="card">
         <div class="card-header text-dark" style="font-weight:bold;">
             <i class="bi bi-card-list"></i> List Of Product
+            <a class="btn btn-warning" style="float:right;" asp-page="AddOrEdit"><i class="bi bi-plus-circle"></i></a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th class="text-center">Name</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Promotion</th>
+                        <th class="text-center">@Html.LabelFor(p=>p.ProductList.ElementAt(0).ProductName)</th>
+                        <th class="text-center">@Html.LabelFor(p=>p.ProductList.ElementAt(0).ProductPrice)</th>
+                        <th class="text-center">@Html.LabelFor(p=>p.ProductList.ElementAt(0).ProductPromotion)</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -32,7 +33,7 @@
                         <tr>
                             <td>@product.ProductName</td>
                             <td>@product.ProductPrice</td>
-                            @if(product.ProductPromotion)
+                            @if (product.ProductPromotion)
                             {
                                 <td><i class="bi bi-fire" style="color:firebrick"></i></td>
                             }
@@ -40,6 +41,14 @@
                             {
                                 <td></td>
                             }
+                            <td>
+                                <div class="btn-group w-75" role="group">
+                                    <a class="btn btn-outline-secondary mx-1 p-1" asp-page="Details"><i class="bi bi-eye"></i></a>
+                                    <a class="btn btn-outline-success mx-1 p-1" asp-page="AddOrEdit" asp-route-productId="@product.ProductID"><i class="bi bi-pencil-square"></i></a>
+                                    <a class="btn btn-outline-danger mx-1 p-1" asp-page="AddOrEdit" asp-page-handler="Delete" asp-route-productId="@product.ProductID">
+                                        <i class="bi bi-trash"></i></a>
+                                </div>
+                            </td>
                         </tr>
                     }
                 </tbody>

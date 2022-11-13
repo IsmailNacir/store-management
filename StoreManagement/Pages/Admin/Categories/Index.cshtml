@@ -26,16 +26,28 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody class="text-center">
-                    @foreach(var category in Model.CategoryList)
-                    {
-                        <tr>
-                            <td>@category.Libelle</td>
-                            <td><button class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+@*                @if (Model.CategoryList.Count() > 0)
+                {
+*@                    <tbody class="text-center">
+                        @foreach (var category in Model.CategoryList)
+                        {
+                            <tr>
+                                <td>@category.Libelle</td>
+                                <td>
+                                    <a class="btn btn-danger" asp-page-handler="Delete" asp-route-categoryId="@category.CategoryId">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+@*
+                }
+                else 
+                {
+                <td></td>
+                }
+*@            </table>
         </div>
         <div class="card-footer text-muted">
         </div>

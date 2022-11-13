@@ -1,0 +1,47 @@
+﻿@page
+@model Admin.Products.AddOrEditModel
+@{
+}
+
+<div class="card w-50" style="margin:auto;">
+    <div class="card-header bg-success text-white" style="font-weight:bold;">
+        <i class="bi bi-plus-circle"></i><span>Add Or Edit Product</span>
+            
+        
+    </div>
+    <form method="post">
+        <input type="hidden" asp-for="@Model.Product.ProductID" />
+        <input type="hidden" asp-for="@Model.Product.CategoryId" />
+        <div class="card-body">
+            <label>@Html.LabelFor(p=>p.Product.ProductName)</label>
+            <div class="mb-3">
+                <input class="form-control" asp-for="@Model.Product.ProductName" placeholder="Product Name ..."/>
+                <span asp-validation-for="@Model.Product.ProductName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" asp-for="@Model.Product.Category" placeholder=" ..." />
+                <span asp-validation-for="@Model.Product.Category" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>@Html.LabelFor(p=>p.Product.ProductDescription)</label>
+                <textarea class="form-control" asp-for="@Model.Product.ProductDescription" placeholder="Product Description ..."></textarea>
+                <span asp-validation-for="@Model.Product.ProductDescription" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label class="form-check-label">@Html.LabelFor(p=>p.Product.ProductPromotion)</label>
+                <input type="checkbox" class="form-check-input" asp-for="@Model.Product.ProductPromotion" placeholder="Product Description ..." />
+            </div>
+
+
+        </div>
+        <div class="card-footer text-muted">
+            <button type="submit" class="btn btn-success"><i class="bi bi-check"></i> Save</button>
+        </div>
+    </form>
+</div>
+
+@section  Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}

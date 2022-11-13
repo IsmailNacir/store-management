@@ -28,29 +28,28 @@ namespace StoreManagement.Pages.Admin.Categories
         {
         }
 
-        public async Task OnPost()
+        public async Task<IActionResult> OnPost()
         {
             Category category = _mapper.Map<Category>(Categ);
 
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && category != null)
             {
-                if (category != null)
+
+                await _dbContext.Category.AddAsync(category);
+                int isSaved = await _dbContext.SaveChangesAsync();
+                if (isSaved > 0)
                 {
-                    await _dbContext.AddAsync(category);
-                    int isSaved = await _dbContext.SaveChangesAsync();
-                    if (isSaved > 0)
-                    {
-                        _toastNotification.AddSuccessToastMessage("The enw category was succeffully saved !");
-                    }
-                    else
-                    {
-                        _toastNotification.AddErrorToastMessage("The new Category is not saved ! Please try again");
-                        //return RedirectToPage("./Index");
-                    }
+                    _toastNotification.AddSuccessToastMessage("The enw category was succeffully saved !");
+                    return RedirectToPage("Index");
+                }
+                else
+                {
+                    _toastNotification.AddErrorToastMessage("The new Category is not saved ! Please try again");
 
                 }
-
             }
+
+            return Page();
         }
     }
 }

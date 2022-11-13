@@ -10,17 +10,32 @@ namespace StoreManagement.Pages.Admin.Categories
 {
     public class IndexModel : PageModel
     {
-        private readonly ProductDbContext _context;
+        private readonly ProductDbContext _dbContext;
 
         public IEnumerable<Category> CategoryList { get; set; }
 
         public IndexModel(ProductDbContext context)
         {
-            _context = context;
+            _dbContext = context;
         }
         public async Task OnGet()
         {
-            CategoryList = await _context.Category.OrderBy(c=>c.Libelle).ToListAsync();
+            CategoryList = await _dbContext.Category.OrderBy(c => c.Libelle).ToListAsync();
+        }
+
+        public async Task<IActionResult> OnGetDelete(string categoryId)
+        {
+            Category? categoryToDelete = await _dbContext.Category
+                .FirstOrDefaultAsync(c => c.CategoryId.ToString() == categoryId);
+
+            if (categoryToDelete != null)
+            {
+                _dbContext.Category.Remove(categoryToDelete);
+                await _dbContext.SaveChangesAsync();
+                await OnGet();
+                return Page();
+            }
+            return Page();
         }
     }
 }

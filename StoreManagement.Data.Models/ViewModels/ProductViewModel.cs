@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoreManagement.Data.Models
+namespace StoreManagement.Data.Models.ViewModels
 {
-    public class Product
+    public class ProductViewModel
     {
         [Key]
         public Guid? ProductID { get; set; }
 
-        [Display(Name ="Product Name")]
-        [StringLength(maximumLength:30, MinimumLength =3, ErrorMessage = "Product Name must be between 3 and 30 char")]
+        [Display(Name = "Product Name")]
+        [Required(ErrorMessage = "Product Name is required !")]
+        [StringLength(maximumLength: 30, MinimumLength = 3, ErrorMessage = "Product Name must be between 3 and 30 char")]
         public string ProductName { get; set; } = string.Empty;
 
         [Display(Name = "Product Description")]
@@ -22,6 +23,8 @@ namespace StoreManagement.Data.Models
         public string ProductDescription { get; set; } = string.Empty;
 
         [Display(Name = "Product Price")]
+        [Required(ErrorMessage = "Product Price is required !")]
+        [Range(minimum: 0, maximum: 10000, ErrorMessage = "Product Price must be greater than 0")]
         public double ProductPrice { get; set; }
 
         [Display(Name = "Product Promotion")]
@@ -29,6 +32,7 @@ namespace StoreManagement.Data.Models
         public bool ProductPromotion { get; set; }
 
         [Display(Name = "Purchase date")]
+        [Required(ErrorMessage = "Purchase date is required !")]
         public DateTime DateAchat { get; set; }
         public Guid? CategoryId { get; set; }
         [ForeignKey("CategoryId")]

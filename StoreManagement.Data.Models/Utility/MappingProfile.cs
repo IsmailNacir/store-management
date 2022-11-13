@@ -13,6 +13,7 @@ namespace StoreManagement.Data.Models.Utility
         public MappingProfile()
         {
             CreateMap<Category, CategoryViewModel>().ReverseMap();
+            CreateMap<Product, ProductViewModel>().ReverseMap();
         }
     }
 }
