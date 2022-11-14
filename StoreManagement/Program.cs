@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 using StoreManagement.Data;
+using StoreManagement.Data.Models;
 using StoreManagement.Data.Models.Utility;
 using StoreManagement.Service.Interfaces;
 using StoreManagement.Service.Services;
@@ -18,6 +20,18 @@ builder.Services.AddDbContext<ProductDbContext>(option =>
 // Add Service For AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
+// Add Service Identity
+builder.Services.AddIdentity<AppUser, IdentityRole>(option=>
+{
+    option.Password = new PasswordOptions
+    {
+        RequireDigit = true,
+        RequireLowercase = true,
+        RequireUppercase = true,
+        RequireNonAlphanumeric = false
+    }; 
+    }).AddEntityFrameworkStores<ProductDbContext>();
+
 // Add Service For NtoastNotify & some options
 builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
 {
@@ -30,7 +44,7 @@ builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
 // Add Services/interfaces
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
-
+//builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 

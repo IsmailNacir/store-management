@@ -11,7 +11,7 @@ namespace StoreManagement.Data.Models.ViewModels
     public class ProductViewModel
     {
         [Key]
-        public Guid? ProductID { get; set; }
+        public Guid? ProductId { get; set; }
 
         [Display(Name = "Product Name")]
         [Required(ErrorMessage = "Product Name is required !")]

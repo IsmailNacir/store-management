@@ -24,7 +24,7 @@ namespace StoreManagement.Service.Services
 
         public async Task<bool> DeleteProduct(string productId)
         {
-            Product? productToDelete = await _dbContext.Product.FirstOrDefaultAsync(p => p.ProductID.ToString() == productId);
+            Product? productToDelete = await _dbContext.Product.FirstOrDefaultAsync(p => p.ProductId.ToString() == productId);
 
             if (productToDelete != null)
             {
@@ -72,7 +72,7 @@ namespace StoreManagement.Service.Services
         {
             Product? product = await _dbContext.Product
                                 .Include(p => p.Category)
-                                .SingleOrDefaultAsync(d => d.ProductID.ToString() == productId);
+                                .SingleOrDefaultAsync(d => d.ProductId.ToString() == productId);
 
             return _mapper.Map<ProductViewModel>(product);
         }

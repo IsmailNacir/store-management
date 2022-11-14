@@ -14,6 +14,7 @@ namespace StoreManagement.Data.Models.Utility
         {
             CreateMap<Category, CategoryViewModel>().ReverseMap();
             CreateMap<Product, ProductViewModel>().ReverseMap();
+            CreateMap<AppUser, AppUserViewModel>().ReverseMap();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using StoreManagement.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace StoreManagement.Data
 {
-    public class ProductDbContext : DbContext
+    public class ProductDbContext : IdentityDbContext
     {
         public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
         {
@@ -17,5 +18,6 @@ namespace StoreManagement.Data
 
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<AppUser> AppUser { get; set; }
     }
 }

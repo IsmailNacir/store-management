@@ -5,12 +5,19 @@
 
 <div class="card w-50" style="margin:auto;">
     <div class="card-header bg-success text-white" style="font-weight:bold;">
-        <i class="bi bi-plus-circle"></i><span>Add Or Edit Product</span>
+        @if (Model.Product.ProductId != null)
+        {
+            <span><i class="bi bi-arrow-clockwise"></i> Update Product</span>
+        }
+        else
+        {
+            <span><i class="bi bi-plus-circle"></i> Add new Product</span>
 
+        }
 
     </div>
     <form method="post">
-        <input type="hidden" asp-for="@Model.Product.ProductID" />
+        <input type="hidden" asp-for="@Model.Product.ProductId" />
         <div class="card-body">
             <label>@Html.LabelFor(p=>p.Product.ProductName)</label>
             <div class="mb-3">
@@ -42,7 +49,18 @@
 
         </div>
         <div class="card-footer text-muted">
-            <button type="submit" class="btn btn-success"><i class="bi bi-check"></i> Save</button>
+            <button type="submit" class="btn btn-success">
+
+                @if (Model.Product.ProductId != null)
+                {
+                    <span><i class="bi bi-arrow-clockwise"></i>Update</span>
+                }
+                else
+                {
+                    <span><i class="bi bi-check"></i>Save</span>
+
+                }
+            </button>
         </div>
     </form>
 </div>

@@ -11,7 +11,7 @@ namespace StoreManagement.Data.Models
     public class Product
     {
         [Key]
-        public Guid? ProductID { get; set; }
+        public Guid? ProductId { get; set; }
 
         [Display(Name ="Product Name")]
         [StringLength(maximumLength:30, MinimumLength =3, ErrorMessage = "Product Name must be between 3 and 30 char")]

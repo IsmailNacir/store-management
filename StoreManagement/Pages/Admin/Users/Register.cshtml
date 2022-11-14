@@ -1,0 +1,48 @@
+﻿@page
+@model Admin.Users.RegisterModel
+@{
+}
+
+<div class="card w-50" style="margin:auto;">
+    <div class="card-header bg-dark text-white" style="font-weight:bold;">
+        <i class="bi bi-person-add"></i> Register New User
+    </div>
+    <form method="post">
+        <div class="card-body">
+            <div class="mb-2">
+                <label class="form-label">First Name :</label>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.FirstName"/>
+                <span asp-validation-for="@Model.AppUserInput.FirstName"></span>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Last Name :</label>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.LastName" />
+                <span asp-validation-for="@Model.AppUserInput.LastName"></span>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Phone number :</label>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.PhoneNumber" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">E-mail :</label>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.Email" />
+                <span asp-validation-for="@Model.AppUserInput.Email"></span>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Password :</label>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.Password" />
+                <span asp-validation-for="@Model.AppUserInput.Password"></span>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Confirm Password :</label>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.ConfirmPassword" />
+                <span asp-validation-for="@Model.AppUserInput.ConfirmPassword"></span>
+            </div>
+        </div>
+        <div class="card-footer text-muted">
+            <a class="btn btn-outline-dark" asp-page="Index"><i class="bi bi-arrow-return-left"></i> Back to home</a>
+            <button type="submit" class="btn btn-outline-dark" asp-page="Index"><i class="bi bi-plus-square"></i> Register</button>
+        </div>
+    </form>
+</div>
+

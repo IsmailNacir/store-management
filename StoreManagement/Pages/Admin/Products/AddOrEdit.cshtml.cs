@@ -69,9 +69,9 @@ namespace StoreManagement.Pages.Admin.Products
             if (ModelState.IsValid)
             {
 
-                var response = await _productService.UpdateOrAddProduct(Product.ProductID.ToString(), Product);
+                var response = await _productService.UpdateOrAddProduct(Product.ProductId.ToString(), Product);
 
-                if (response && Product.ProductID == null)
+                if (response && Product.ProductId == null)
                 {
                     _toastNotification.AddSuccessToastMessage("The new product was succeffully saved !");
                     return RedirectToPage("Index");
@@ -79,7 +79,7 @@ namespace StoreManagement.Pages.Admin.Products
 
                 else
                 {
-                    if (response && Product.ProductID != null)
+                    if (response && Product.ProductId != null)
                     {
                         _toastNotification.AddSuccessToastMessage("The new product was succeffully updated !");
                         return RedirectToPage("Index");
