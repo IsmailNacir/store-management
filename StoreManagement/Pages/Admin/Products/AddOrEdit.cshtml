@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{productId:guid?}"
 @model Admin.Products.AddOrEditModel
 @{
 }
@@ -6,21 +6,21 @@
 <div class="card w-50" style="margin:auto;">
     <div class="card-header bg-success text-white" style="font-weight:bold;">
         <i class="bi bi-plus-circle"></i><span>Add Or Edit Product</span>
-            
-        
+
+
     </div>
     <form method="post">
         <input type="hidden" asp-for="@Model.Product.ProductID" />
-        <input type="hidden" asp-for="@Model.Product.CategoryId" />
         <div class="card-body">
             <label>@Html.LabelFor(p=>p.Product.ProductName)</label>
             <div class="mb-3">
-                <input class="form-control" asp-for="@Model.Product.ProductName" placeholder="Product Name ..."/>
+                <input class="form-control" asp-for="@Model.Product.ProductName" placeholder="Product Name ..." />
                 <span asp-validation-for="@Model.Product.ProductName" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <input class="form-control" asp-for="@Model.Product.Category" placeholder=" ..." />
-                <span asp-validation-for="@Model.Product.Category" class="text-danger"></span>
+                <select class="form-select" asp-for="@Model.Product.CategoryId" asp-items="Model.CategoryList">
+                </select>
+                <span asp-validation-for="@Model.Product.CategoryId" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
@@ -30,8 +30,13 @@
 
             </div>
             <div class="mb-3">
+                <label class="form-check-label">@Html.LabelFor(p=>p.Product.ProductPrice)</label>
+                <input type="number" class="form-control" asp-for="@Model.Product.ProductPrice" placeholder="Product Price ..." />
+            </div>
+
+            <div class="mb-3">
                 <label class="form-check-label">@Html.LabelFor(p=>p.Product.ProductPromotion)</label>
-                <input type="checkbox" class="form-check-input" asp-for="@Model.Product.ProductPromotion" placeholder="Product Description ..." />
+                <input type="checkbox" class="form-check-input" asp-for="@Model.Product.ProductPromotion" />
             </div>
 
 

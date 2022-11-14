@@ -393,3 +393,5 @@ P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\bin\Deb
 P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\obj\Debug\net6.0\StoreManagement.MvcApplicationPartsAssemblyInfo.cs
+P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\bin\Debug\net6.0\StoreManagement.Service.dll
+P:\Pluralsight\ASP.NET Core Fundamentals\StoreManagement\StoreManagement\bin\Debug\net6.0\StoreManagement.Service.pdb

@@ -7,7 +7,7 @@
     <div class="row mb-4 w-50" style="margin:auto">
         <form>
             <div class="input-group mb-3">
-                <input type="search" class="form-control" placeholder="Search By Keyword" />
+                <input type="search" class="form-control" placeholder="Search By Keyword" asp-for="SearchTerm" />
                 <button class="btn btn-info"><i class="bi bi-search"></i></button>
             </div>
         </form>
@@ -16,7 +16,7 @@
     <div class="card w-25" style="margin:auto">
         <div class="card-header text-dark" style="font-weight:bold;">
             <i class="bi bi-card-list"></i> List Of Categories
-            <a class="btn btn-warning" style="float:right" asp-page="./Add"><i class="bi bi-plus-circle"></i></a>
+            <a class="btn btn-warning" style="float:right" asp-page="AddAndDelete"><i class="bi bi-plus-circle"></i></a>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-hover">
@@ -26,28 +26,20 @@
                         <th></th>
                     </tr>
                 </thead>
-@*                @if (Model.CategoryList.Count() > 0)
-                {
-*@                    <tbody class="text-center">
-                        @foreach (var category in Model.CategoryList)
-                        {
-                            <tr>
-                                <td>@category.Libelle</td>
-                                <td>
-                                    <a class="btn btn-danger" asp-page-handler="Delete" asp-route-categoryId="@category.CategoryId">
-                                        <i class="bi bi-trash"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-@*
-                }
-                else 
-                {
-                <td></td>
-                }
-*@            </table>
+                <tbody class="text-center">
+                    @foreach (var category in Model.CategoryList)
+                    {
+                        <tr>
+                            <td>@category.Libelle</td>
+                            <td>
+                                <a class="btn btn-danger" asp-page="AddAndDelete" asp-page-handler="Delete" asp-route-categoryId="@category.CategoryId">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
         <div class="card-footer text-muted">
         </div>

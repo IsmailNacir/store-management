@@ -1,15 +1,32 @@
-﻿@page
+﻿@page "{productId:guid?}"
 @model Admin.Products.DetailsModel
 @{
 }
 
 <div class="card w-50" style="margin:auto;">
     <div class="card-header bg-secondary text-white" style="font-weight:bold;">
-        <i class="bi bi-zoom-in"></i> Details of ...
+        <i class="bi bi-zoom-in"></i> Details of @Model.Product.ProductName
     </div>
     <div class="card-body">
+        <div class="mb-3">
+            <span style="font-weight:bold;">@Html.LabelFor(p=>p.Product.ProductName) :</span><span> @Model.Product.ProductName</span>
+        </div>
+        <div class="mb-3">
+            <span style="font-weight:bold;">@Html.LabelFor(p=>p.Product.ProductPrice) :</span><span> @Model.Product.ProductPrice</span>
+        </div>
+        <div class="mb-3">
+            <span style="font-weight:bold;">@Html.LabelFor(p=>p.Product.Category.Libelle) :</span><span> @Model.Product.Category.Libelle</span>
+        </div>
+        <div class="mb-3">
+            <span style="font-weight:bold;">@Html.LabelFor(p=>p.Product.ProductDescription) :</span>
+            <span>@Model.Product.ProductDescription</span>
+        </div>
+        <div class="mb-3">
+            <span style="font-weight:bold;">@Html.LabelFor(p=>p.Product.ProductPromotion) :</span><span> @Model.Product.ProductPromotion</span>
+        </div>
     </div>
     <div class="card-footer text-muted">
-        <a class="btn btn-outline-dark" asp-page="./Index"><i class="bi bi-arrow-return-left"></i></a>
+        <a class="btn btn-outline-dark" asp-page="Index"><i class="bi bi-arrow-return-left"></i> Back</a>
+        <a class="btn btn-outline-primary" style="float:right;" asp-page="AddOrEdit" asp-route-productId=@Model.Product.ProductID><i class="bi bi-pencil-square"></i> Edit</a>
     </div>
 </div>

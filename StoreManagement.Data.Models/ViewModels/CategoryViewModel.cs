@@ -10,6 +10,8 @@ namespace StoreManagement.Data.Models.ViewModels
 {
     public class CategoryViewModel
     {
+        public Guid? CategoryId { get; set; }
+
         [Display(Name = "Category Name")]
         [Required(ErrorMessage = "Categry name is required !")]
         [StringLength(maximumLength: 30, MinimumLength = 3, ErrorMessage = "Category Name must be between 3 and 30 char")]

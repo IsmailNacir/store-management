@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using StoreManagement.Data;
 using StoreManagement.Data.Models.ViewModels;
+using StoreManagement.Service.Interfaces;
 
 namespace StoreManagement.Pages.Admin.Products
 {
@@ -10,13 +11,15 @@ namespace StoreManagement.Pages.Admin.Products
     {
         public ProductViewModel Product { get; set; }
         private readonly ProductDbContext _dbContext;
-        public DetailsModel(ProductDbContext context)
+        private readonly IProductService _productService;
+        public DetailsModel(ProductDbContext context, IProductService productService)
         {
             _dbContext = context;    
+            _productService = productService;
         }
         public async Task OnGet(Guid productId)
         {
-            //this.Product = await _context.Product.FindAsync(productId);
+            Product = await _productService.GetById(productId.ToString());
         }
     }
 }

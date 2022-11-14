@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using NToastNotify;
 using StoreManagement.Data;
 using StoreManagement.Data.Models.Utility;
+using StoreManagement.Service.Interfaces;
+using StoreManagement.Service.Services;
 using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +26,10 @@ builder.Services.AddRazorPages().AddNToastNotifyToastr(new ToastrOptions()
     PreventDuplicates = true,
     CloseButton = true
 });
+
+// Add Services/interfaces
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
 var app = builder.Build();

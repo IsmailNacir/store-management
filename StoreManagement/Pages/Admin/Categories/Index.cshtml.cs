@@ -5,37 +5,28 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using StoreManagement.Data;
 using StoreManagement.Data.Models;
 using StoreManagement.Data.Models.ViewModels;
+using StoreManagement.Service.Interfaces;
 
 namespace StoreManagement.Pages.Admin.Categories
 {
     public class IndexModel : PageModel
     {
         private readonly ProductDbContext _dbContext;
+        private readonly ICategoryService _categoryService;
 
-        public IEnumerable<Category> CategoryList { get; set; }
+        public IEnumerable<CategoryViewModel> CategoryList { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
 
-        public IndexModel(ProductDbContext context)
+        public IndexModel(ProductDbContext context, ICategoryService categoryService)
         {
             _dbContext = context;
+            _categoryService = categoryService;
         }
         public async Task OnGet()
         {
-            CategoryList = await _dbContext.Category.OrderBy(c => c.Libelle).ToListAsync();
+            CategoryList = await _categoryService.GetBySearchTerm(SearchTerm);
         }
 
-        public async Task<IActionResult> OnGetDelete(string categoryId)
-        {
-            Category? categoryToDelete = await _dbContext.Category
-                .FirstOrDefaultAsync(c => c.CategoryId.ToString() == categoryId);
-
-            if (categoryToDelete != null)
-            {
-                _dbContext.Category.Remove(categoryToDelete);
-                await _dbContext.SaveChangesAsync();
-                await OnGet();
-                return Page();
-            }
-            return Page();
-        }
     }
 }

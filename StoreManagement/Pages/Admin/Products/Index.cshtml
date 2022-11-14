@@ -7,7 +7,7 @@
     <div class="row mb-4 w-50" style="margin:auto">
         <form>
             <div class="input-group mb-3">
-                <input type="search" class="form-control" placeholder="Search By Keyword" />
+                <input type="search" class="form-control" placeholder="Search By Keyword" asp-for="SearchTerm" />
                 <button class="btn btn-info"><i class="bi bi-search"></i></button>
 
             </div>
@@ -25,6 +25,7 @@
                         <th class="text-center">@Html.LabelFor(p=>p.ProductList.ElementAt(0).ProductName)</th>
                         <th class="text-center">@Html.LabelFor(p=>p.ProductList.ElementAt(0).ProductPrice)</th>
                         <th class="text-center">@Html.LabelFor(p=>p.ProductList.ElementAt(0).ProductPromotion)</th>
+                        <th class="text-center">Category</th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -41,9 +42,11 @@
                             {
                                 <td></td>
                             }
+                            <td>@product.Category.Libelle</td>
+
                             <td>
                                 <div class="btn-group w-75" role="group">
-                                    <a class="btn btn-outline-secondary mx-1 p-1" asp-page="Details"><i class="bi bi-eye"></i></a>
+                                    <a class="btn btn-outline-secondary mx-1 p-1" asp-page="Details" asp-route-productId="@product.ProductID"><i class="bi bi-eye"></i></a>
                                     <a class="btn btn-outline-success mx-1 p-1" asp-page="AddOrEdit" asp-route-productId="@product.ProductID"><i class="bi bi-pencil-square"></i></a>
                                     <a class="btn btn-outline-danger mx-1 p-1" asp-page="AddOrEdit" asp-page-handler="Delete" asp-route-productId="@product.ProductID">
                                         <i class="bi bi-trash"></i></a>

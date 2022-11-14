@@ -170,6 +170,74 @@
         }
       }
     },
+    "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Service\\StoreManagement.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Service\\StoreManagement.Service.csproj",
+        "projectName": "StoreManagement.Service",
+        "projectPath": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Service\\StoreManagement.Service.csproj",
+        "packagesPath": "C:\\Users\\isn\\.nuget\\packages\\",
+        "outputPath": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\isn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Data.Models\\StoreManagement.Data.Models.csproj": {
+                "projectPath": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Data.Models\\StoreManagement.Data.Models.csproj"
+              },
+              "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Data\\StoreManagement.Data.csproj": {
+                "projectPath": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Data\\StoreManagement.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement\\StoreManagement.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -202,6 +270,9 @@
             "projectReferences": {
               "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Data\\StoreManagement.Data.csproj": {
                 "projectPath": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Data\\StoreManagement.Data.csproj"
+              },
+              "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Service\\StoreManagement.Service.csproj": {
+                "projectPath": "P:\\Pluralsight\\ASP.NET Core Fundamentals\\StoreManagement\\StoreManagement.Service\\StoreManagement.Service.csproj"
               }
             }
           }

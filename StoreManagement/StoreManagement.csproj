@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StoreManagement.Data\StoreManagement.Data.csproj" />
+    <ProjectReference Include="..\StoreManagement.Service\StoreManagement.Service.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using StoreManagement.Data;
 using StoreManagement.Data.Models;
 using StoreManagement.Data.Models.Utility;
 using StoreManagement.Data.Models.ViewModels;
+using StoreManagement.Service.Interfaces;
 
 namespace StoreManagement.Pages.Admin.Categories
 {
@@ -14,15 +15,18 @@ namespace StoreManagement.Pages.Admin.Categories
         private readonly IMapper _mapper;
         private readonly IToastNotification _toastNotification;
         private readonly ProductDbContext _dbContext;
+        private readonly ICategoryService _categoryService;
         [BindProperty]
         public CategoryViewModel Categ { get; set; }
         public AddModel(ProductDbContext context,
                         IMapper mapper,
-                        IToastNotification toastNotification)
+                        IToastNotification toastNotification,
+                        ICategoryService categoryService)
         {
             _dbContext = context;
             _mapper = mapper;
             _toastNotification = toastNotification;
+            _categoryService = categoryService;
         }
         public void OnGet()
         {
@@ -51,5 +55,21 @@ namespace StoreManagement.Pages.Admin.Categories
 
             return Page();
         }
+
+        public async Task<IActionResult> OnGetDelete(Guid categoryId)
+        {
+            var response = await _categoryService.DeleteCategory(categoryId);
+
+            if (response)
+            {
+                _toastNotification.AddSuccessToastMessage("The category was successffully removed !");
+                return RedirectToPage("Index");
+
+            }
+
+            _toastNotification.AddErrorToastMessage("There is an error, please try again :/");
+            return RedirectToPage("Index");
+        }
+
     }
 }

@@ -40,6 +40,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.10",
           "NToastNotify": "8.0.0",
           "StoreManagement.Data": "1.0.0",
+          "StoreManagement.Service": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "6.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "6.0.0.0",
@@ -1977,6 +1978,18 @@
         },
         "compile": {
           "StoreManagement.Data.Models.dll": {}
+        }
+      },
+      "StoreManagement.Service/1.0.0": {
+        "dependencies": {
+          "StoreManagement.Data": "1.0.0",
+          "StoreManagement.Data.Models": "1.0.0"
+        },
+        "runtime": {
+          "StoreManagement.Service.dll": {}
+        },
+        "compile": {
+          "StoreManagement.Service.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/6.0.0.0": {
@@ -4897,6 +4910,11 @@
       "sha512": ""
     },
     "StoreManagement.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "StoreManagement.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
