@@ -1,0 +1,36 @@
+﻿@page
+@model Admin.Users.LoginModel
+@{
+}
+
+<div class="card w-50" style="margin:auto;">
+    <div class="card-header bg-dark text-white" style="font-weight:bold;">
+        <i class="bi bi-person"></i> Login
+    </div>
+    <form method="post">
+        <div class="card-body">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="mb-2">
+                <label class="form-label">E-mail :</label>
+                <input type="text" class="form-control" asp-for="@Model.LoginInput.Email" />
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Password :</label>
+                <input type="password" class="form-control" asp-for="@Model.LoginInput.Password" />
+            </div>
+            <div class="mb-2">
+                <label class="form-check-label">@Html.LabelFor(u=>u.LoginInput.Remember) </label>
+                <input type="checkbox" class="form-check-input" asp-for="@Model.LoginInput.Remember" />
+            </div>
+
+        </div>
+        <div class="card-footer text-muted text-center">
+            <button type="submit" class="btn btn-outline-dark"> Login</button>
+        </div>
+    </form>
+</div>
+
+@section  Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}
+

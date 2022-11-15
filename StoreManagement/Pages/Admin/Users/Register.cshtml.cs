@@ -16,6 +16,7 @@ namespace StoreManagement.Pages.Admin.Users
         private readonly UserManager<AppUser> _userManager;
         private readonly IToastNotification _toastNotification;
         private readonly IMapper _mapper;
+
         public RegisterModel(UserManager<AppUser> userManager,
                             IToastNotification toastNotification,
                             IMapper mapper)
@@ -35,8 +36,8 @@ namespace StoreManagement.Pages.Admin.Users
                 AppUser user = _mapper.Map<AppUser>(AppUserInput);
                 user.UserName = AppUserInput.Email;
                 var response = await _userManager.CreateAsync(user, AppUserInput.Password);
-                
-                if(response.Succeeded)
+
+                if (response.Succeeded)
                 {
                     _toastNotification.AddSuccessToastMessage("User was created successffuly");
                     return RedirectToPage("Index");

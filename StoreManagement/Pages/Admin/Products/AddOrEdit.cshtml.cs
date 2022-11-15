@@ -16,21 +16,17 @@ namespace StoreManagement.Pages.Admin.Products
         private readonly ProductDbContext _dbContext;
         private readonly IToastNotification _toastNotification;
         private readonly IProductService _productService;
-        private readonly IMapper _mapper;
-
         [BindProperty(SupportsGet = true)]
         public ProductViewModel Product { get; set; }
         public IEnumerable<SelectListItem> CategoryList { get; set; }
 
         public AddOrEditModel(ProductDbContext context,
                               IToastNotification toastNotification,
-                              IProductService productService,
-                              IMapper mapper)
+                              IProductService productService)
         {
             _dbContext = context;
             _toastNotification = toastNotification;
             _productService = productService;
-            _mapper = mapper;
             Product = new ProductViewModel();
         }
         public async void OnGet(string? productId)

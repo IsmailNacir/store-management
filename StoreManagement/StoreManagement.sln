@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreManagement.Data.Models
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreManagement.Data", "..\StoreManagement.Data\StoreManagement.Data.csproj", "{AC191517-3B13-40BC-A521-24FC299DB488}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreManagement.Service", "..\StoreManagement.Service\StoreManagement.Service.csproj", "{AF5378D9-0F5C-4317-BA7B-E63099F7EC58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreManagement.Service", "..\StoreManagement.Service\StoreManagement.Service.csproj", "{AF5378D9-0F5C-4317-BA7B-E63099F7EC58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

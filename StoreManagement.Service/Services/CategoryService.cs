@@ -16,30 +16,30 @@ namespace StoreManagement.Service.Services
     {
         private readonly ProductDbContext _dbContext;
         private readonly IMapper _mapper;
+
         public CategoryService(ProductDbContext context, IMapper mapper)
         {
             _dbContext = context;
             _mapper = mapper;
         }
 
-        public async Task<CategoryViewModel> AddCategory(CategoryViewModel newCategory)
+        public async Task<bool> AddCategory(CategoryViewModel newCategory)
         {
-            if(newCategory != null)
+            if (newCategory != null)
             {
                 Category categoryToDb = _mapper.Map<Category>(newCategory);
-               await _dbContext.Category.AddAsync(categoryToDb);
+                await _dbContext.Category.AddAsync(categoryToDb);
                 await _dbContext.SaveChangesAsync();
-                CategoryViewModel result = await GetById(newCategory.CategoryId.ToString());
-                return result;
+                return true;
             }
-            return null;
+            return false;
         }
 
         public async Task<bool> DeleteCategory(Guid categoryId)
         {
             Category? categoryToDelete = await _dbContext.Category.FirstOrDefaultAsync(c => c.CategoryId == categoryId);
 
-            if(categoryToDelete !=null)
+            if (categoryToDelete != null)
             {
                 _dbContext.Category.Remove(categoryToDelete);
                 await _dbContext.SaveChangesAsync();

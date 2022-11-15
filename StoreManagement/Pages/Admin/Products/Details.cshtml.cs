@@ -10,11 +10,10 @@ namespace StoreManagement.Pages.Admin.Products
     public class DetailsModel : PageModel
     {
         public ProductViewModel Product { get; set; }
-        private readonly ProductDbContext _dbContext;
         private readonly IProductService _productService;
-        public DetailsModel(ProductDbContext context, IProductService productService)
+
+        public DetailsModel(IProductService productService)
         {
-            _dbContext = context;    
             _productService = productService;
         }
         public async Task OnGet(Guid productId)

@@ -14,7 +14,6 @@
             <span><i class="bi bi-plus-circle"></i> Add new Product</span>
 
         }
-
     </div>
     <form method="post">
         <input type="hidden" asp-for="@Model.Product.ProductId" />
@@ -29,26 +28,22 @@
                 </select>
                 <span asp-validation-for="@Model.Product.CategoryId" class="text-danger"></span>
             </div>
-
             <div class="mb-3">
                 <label>@Html.LabelFor(p=>p.Product.ProductDescription)</label>
                 <textarea class="form-control" asp-for="@Model.Product.ProductDescription" placeholder="Product Description ..."></textarea>
                 <span asp-validation-for="@Model.Product.ProductDescription" class="text-danger"></span>
-
             </div>
             <div class="mb-3">
                 <label class="form-check-label">@Html.LabelFor(p=>p.Product.ProductPrice)</label>
                 <input type="number" class="form-control" asp-for="@Model.Product.ProductPrice" placeholder="Product Price ..." />
             </div>
-
             <div class="mb-3">
                 <label class="form-check-label">@Html.LabelFor(p=>p.Product.ProductPromotion)</label>
                 <input type="checkbox" class="form-check-input" asp-for="@Model.Product.ProductPromotion" />
             </div>
-
-
         </div>
         <div class="card-footer text-muted">
+            <a class="btn btn-outline-dark" asp-page="Index"><i class="bi bi-arrow-return-left"></i> Go Back</a>
             <button type="submit" class="btn btn-success">
 
                 @if (Model.Product.ProductId != null)

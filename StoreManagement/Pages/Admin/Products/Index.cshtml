@@ -16,7 +16,10 @@
     <div class="card">
         <div class="card-header text-dark" style="font-weight:bold;">
             <i class="bi bi-card-list"></i> List Of Product
-            <a class="btn btn-warning" style="float:right;" asp-page="AddOrEdit"><i class="bi bi-plus-circle"></i></a>
+            <div class="btn-group w-35" style="float:right;" role="group">
+                <a class="btn btn-warning mx-1 p-1" asp-page="AddOrEdit"><i class="bi bi-plus-circle"></i> Add New Product</a>
+                <a class="btn btn-info mx-1 p-1" style="float:right;" asp-page="../Categories/Index">Show Categories</a>
+            </div>
         </div>
         <div class="card-body">
             <table class="table table-bordered table-hover">
@@ -49,7 +52,8 @@
                                     <a class="btn btn-outline-secondary mx-1 p-1" asp-page="Details" asp-route-productId="@product.ProductId"><i class="bi bi-eye"></i></a>
                                     <a class="btn btn-outline-success mx-1 p-1" asp-page="AddOrEdit" asp-route-productId="@product.ProductId"><i class="bi bi-pencil-square"></i></a>
                                     <a class="btn btn-outline-danger mx-1 p-1" asp-page="AddOrEdit" asp-page-handler="Delete" asp-route-productId="@product.ProductId">
-                                        <i class="bi bi-trash"></i></a>
+                                        <i class="bi bi-trash"></i>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

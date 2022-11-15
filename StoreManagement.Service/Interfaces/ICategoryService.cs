@@ -11,6 +11,6 @@ namespace StoreManagement.Service.Interfaces
     {
         Task<IEnumerable<CategoryViewModel>> GetBySearchTerm(string searchTerm);
         Task<bool> DeleteCategory(Guid categoryId);
-        Task<CategoryViewModel> AddCategory(CategoryViewModel newCategory);
+        Task<bool> AddCategory(CategoryViewModel newCategory);
     }
 }

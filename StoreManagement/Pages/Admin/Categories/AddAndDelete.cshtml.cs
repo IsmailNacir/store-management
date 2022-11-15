@@ -12,36 +12,30 @@ namespace StoreManagement.Pages.Admin.Categories
 {
     public class AddModel : PageModel
     {
-        private readonly IMapper _mapper;
         private readonly IToastNotification _toastNotification;
-        private readonly ProductDbContext _dbContext;
         private readonly ICategoryService _categoryService;
         [BindProperty]
         public CategoryViewModel Categ { get; set; }
-        public AddModel(ProductDbContext context,
-                        IMapper mapper,
-                        IToastNotification toastNotification,
+
+        public AddModel(IToastNotification toastNotification,
                         ICategoryService categoryService)
+
         {
-            _dbContext = context;
-            _mapper = mapper;
             _toastNotification = toastNotification;
             _categoryService = categoryService;
         }
+
         public void OnGet()
         {
         }
 
         public async Task<IActionResult> OnPost()
         {
-            Category category = _mapper.Map<Category>(Categ);
-
-            if (ModelState.IsValid && category != null)
+            if (ModelState.IsValid)
             {
-
-                await _dbContext.Category.AddAsync(category);
-                int isSaved = await _dbContext.SaveChangesAsync();
-                if (isSaved > 0)
+                var response = await _categoryService.AddCategory(Categ);
+               
+                if (response)
                 {
                     _toastNotification.AddSuccessToastMessage("The enw category was succeffully saved !");
                     return RedirectToPage("Index");

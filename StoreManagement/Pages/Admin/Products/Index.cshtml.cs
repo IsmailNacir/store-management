@@ -14,6 +14,7 @@ namespace StoreManagement.Pages.Admin.Products
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
         public IEnumerable<ProductViewModel> ProductList { get; set; }
+
         public IndexModel(IProductService productService)
         {
             _productService = productService;

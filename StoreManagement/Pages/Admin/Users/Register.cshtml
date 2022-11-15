@@ -11,13 +11,13 @@
         <div class="card-body">
             <div class="mb-2">
                 <label class="form-label">First Name :</label>
-                <input type="text" class="form-control" asp-for="@Model.AppUserInput.FirstName"/>
-                <span asp-validation-for="@Model.AppUserInput.FirstName"></span>
+                <input type="text" class="form-control" asp-for="@Model.AppUserInput.FirstName" />
+                <span asp-validation-for="@Model.AppUserInput.FirstName" class="text-danger"></span>
             </div>
             <div class="mb-2">
                 <label class="form-label">Last Name :</label>
                 <input type="text" class="form-control" asp-for="@Model.AppUserInput.LastName" />
-                <span asp-validation-for="@Model.AppUserInput.LastName"></span>
+                <span asp-validation-for="@Model.AppUserInput.LastName" class="text-danger"></span>
             </div>
             <div class="mb-2">
                 <label class="form-label">Phone number :</label>
@@ -26,23 +26,27 @@
             <div class="mb-2">
                 <label class="form-label">E-mail :</label>
                 <input type="text" class="form-control" asp-for="@Model.AppUserInput.Email" />
-                <span asp-validation-for="@Model.AppUserInput.Email"></span>
+                <span asp-validation-for="@Model.AppUserInput.Email" class="text-danger"></span>
             </div>
             <div class="mb-2">
                 <label class="form-label">Password :</label>
-                <input type="text" class="form-control" asp-for="@Model.AppUserInput.Password" />
-                <span asp-validation-for="@Model.AppUserInput.Password"></span>
+                <input type="password" class="form-control" asp-for="@Model.AppUserInput.Password" />
+                <span asp-validation-for="@Model.AppUserInput.Password" class="text-danger"></span>
             </div>
             <div class="mb-2">
                 <label class="form-label">Confirm Password :</label>
-                <input type="text" class="form-control" asp-for="@Model.AppUserInput.ConfirmPassword" />
-                <span asp-validation-for="@Model.AppUserInput.ConfirmPassword"></span>
+                <input type="password" class="form-control" asp-for="@Model.AppUserInput.ConfirmPassword" />
+                <span asp-validation-for="@Model.AppUserInput.ConfirmPassword" class="text-danger"></span>
             </div>
         </div>
         <div class="card-footer text-muted">
-            <a class="btn btn-outline-dark" asp-page="Index"><i class="bi bi-arrow-return-left"></i> Back to home</a>
-            <button type="submit" class="btn btn-outline-dark" asp-page="Index"><i class="bi bi-plus-square"></i> Register</button>
+            <a class="btn btn-outline-dark" asp-page="../../Index"><i class="bi bi-arrow-return-left"></i> Go Back</a>
+            <button type="submit" class="btn btn-outline-dark"><i class="bi bi-plus-square"></i> Register</button>
         </div>
     </form>
 </div>
+
+@section  Scripts{
+    <partial name="_ValidationScriptsPartial"></partial>
+}
 

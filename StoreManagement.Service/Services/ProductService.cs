@@ -16,6 +16,7 @@ namespace StoreManagement.Service.Services
     {
         private readonly ProductDbContext _dbContext;
         private readonly IMapper _mapper;
+
         public ProductService(ProductDbContext context, IMapper mapper)
         {
             _dbContext = context;

@@ -13,9 +13,8 @@ namespace StoreManagement.Pages.Admin.Categories
     {
         private readonly ProductDbContext _dbContext;
         private readonly ICategoryService _categoryService;
-
         public IEnumerable<CategoryViewModel> CategoryList { get; set; }
-        [BindProperty(SupportsGet =true)]
+        [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
         public IndexModel(ProductDbContext context, ICategoryService categoryService)
